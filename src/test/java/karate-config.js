@@ -8,9 +8,10 @@ function fn() {
     env: env,
     myVarName: 'someValue',
     baseUrl: 'https://demoqa.com',
+    masterPassword: 'Test@1234',
 
     generateRandomUsername: function() {
-      return 'User_' + Math.floor(Math.random() * 10000)
+      return 'User_' + Math.floor(Math.random() * 100000)
     }
   }
 
