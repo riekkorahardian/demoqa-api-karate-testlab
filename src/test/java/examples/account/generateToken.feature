@@ -3,7 +3,7 @@ Feature: A1. Setup Authentication and Token Generation (Reusable)
 
   Background:
     * url baseUrl
-    * def password = masterPassword
+    * def password = validPassword
     * def userData = call read('classpath:examples/account/registerUser.feature')
     * def username = userData.storedUsername
     * def userId = userData.storedUserId

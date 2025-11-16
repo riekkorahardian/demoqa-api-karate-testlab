@@ -1,10 +1,10 @@
-@getUser
-Feature: User Verification - Get User Details by ID
+@getUserComponent @allScenarios
+Feature: Get User Details by ID
 
   Background:
     * url baseUrl
-    * def password = validPassword
 
+  Scenario: As QA, I can check user profile with book collections
     * def tokenData = call read('classpath:examples/account/generateToken.feature')
     * def token = tokenData.authToken
     * def storedUsername = tokenData.username
@@ -13,10 +13,18 @@ Feature: User Verification - Get User Details by ID
     * print 'Successfully fetch user data from generateToken.feature - Username:', storedUsername
     * print 'Successfully fetch user data from generateToken.feature - UserID:', storedUserId
 
-  Scenario: Get user details and verify stored ID
     Given path '/Account/v1/User/' + storedUserId
     And header Authorization = 'Bearer ' + token 
     When method get
     Then status 200
     * match response.userId == storedUserId
     * match response.username == storedUsername
+    * match response.books == []
+
+  Scenario: As QA, I can check user profile with invalid authorization
+    * def tokenFalse = invalidToken
+    * def userIdFalse = invalidUserId
+    Given path '/Account/v1/User/' + invalidUserId
+    And header Authorization = 'Bearer ' + invalidToken 
+    When method get
+    Then status 401
