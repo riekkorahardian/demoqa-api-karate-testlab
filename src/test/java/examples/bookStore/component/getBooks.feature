@@ -1,4 +1,4 @@
-@getBooks
+@getBooksComponent
 Feature: To Get All Books
 
   Background:

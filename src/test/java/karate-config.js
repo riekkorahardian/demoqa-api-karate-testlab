@@ -17,6 +17,7 @@ function fn() {
     validUserId: 'f1a5e2d3-4b6c-7d8e-9f0a-67b5ad6a-ef3e-48c4-9156-758a9d684084',
     invalidUserId: '00000000-0000-0000-0000-000000000000',
     isbnJavascriptDesignPatterns: '9781449331818',
+    dummyIsbn: '2333344331',
     updateBooksIsbn: '9781593277574',
     updateBooksTitle: 'Understanding ECMAScript 6',
 
