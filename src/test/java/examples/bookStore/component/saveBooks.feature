@@ -1,5 +1,5 @@
 @saveBooksComponent
-Feature: To Get All Books
+Feature: Component Test - Save Books
 
   Background:
     * url baseUrl
@@ -21,7 +21,7 @@ Feature: To Get All Books
     * print 'Successfully fetch first book ISBN from getBooks.feature - ISBN:', books1
     * print 'Successfully fetch second book ISBN from getBooks.feature - ISBN:', books2
 
-  Scenario: To Save Books into collection and verify response status 201
+  Scenario: As QA, I can save book into user’s collections
     Given path 'BookStore/v1/Books'
     And header Authorization = 'Bearer ' + token 
     And request { "userId": "#(storedUserId)", "collectionOfIsbns": [{ "isbn": "#(books1)" }, { "isbn": "#(books2)" }] }
@@ -30,7 +30,7 @@ Feature: To Get All Books
     * match response.books[0].isbn == books1
     * match response.books[1].isbn == books2
 
-  Scenario: Invalid token and verify response status 401
+  Scenario: As QA, I can check save book with invalid token
 
     Given path 'BookStore/v1/Books'
     And header Authorization = 'Bearer ' + dummyToken 

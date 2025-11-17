@@ -7,7 +7,7 @@ Feature: To query specific book by ISBN
     * print 'Expected ISBN for Learning JavaScript Design Patterns:', expectedIsbn
 
 
-  Scenario: To Get All Books and Verify Response Status
+  Scenario:  As QA, I can check book’s data with valid user profile
     Given path '/BookStore/v1/Book'
     * param ISBN = expectedIsbn
     When method get

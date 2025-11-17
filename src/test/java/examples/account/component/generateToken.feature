@@ -4,7 +4,7 @@ Feature: Component Test - Generate Auth Token
   Background:
     * url baseUrl
 
-  Scenario: 1. Generate Token with valid user credentials
+  Scenario: As QA, I can check token generation for valid credential
     * def passwordTrue = validPassword
     * def usernameTrue = validUsername
 
@@ -17,7 +17,7 @@ Feature: Component Test - Generate Auth Token
     * match authToken == '#notnull'
     * match response.status == 'Success'
 
-  Scenario: 2. Generate Token with invalid user credentials
+  Scenario: As QA, I can check token generation for invalid credential
     * def passwordFalse = invalidPassword
     * def usernameFalse = invalidUsername
 

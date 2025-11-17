@@ -54,6 +54,7 @@ Scenario: E2E - Register User, Generate Token, Authorize, get user, save books t
     * match response.books[1].title == 'Learning JavaScript Design Patterns'
 
   # 4. Delete Saved Books from User's Collection
+  # As QA, I can remove all saved book from user’s collections
     Given path '/BookStore/v1/Books'
     And header Authorization = 'Bearer ' + token 
     And param UserId = storedUserId

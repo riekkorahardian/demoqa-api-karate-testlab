@@ -1,5 +1,5 @@
 @e2eUpdateBookManagement @e2eScenario
-Feature: E2E Scenario for Save Book Management
+Feature: E2E Scenario for Update Book Management
 
   Background:
     * url baseUrl

@@ -1,5 +1,5 @@
 @e2eRemoveBookManagement @e2eScenario
-Feature: E2E Scenario for Save Book Management
+Feature: E2E Scenario for Remove Book Management
 
   Background:
     * url baseUrl
@@ -54,6 +54,7 @@ Scenario: E2E - Register User, Generate Token, Authorize, get user, save books t
     * match response.books[1].title == 'Learning JavaScript Design Patterns'
 
   # 4. Delete Specific Book from User's Collection
+  # As QA, I can delete speciic saved book from user’s collections
     Given path '/BookStore/v1/Book'
     And header Authorization = 'Bearer ' + token 
     And request { "userId": "#(storedUserId)", "isbn": "#(books1)" }

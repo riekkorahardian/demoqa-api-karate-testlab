@@ -1,10 +1,10 @@
 @authorizationComponent @allScenarios
-Feature: A1. Setup Authentication and Token Generation (Reusable)
+Feature: Component Test - User Authorization
 
   Background:
     * url baseUrl
 
-  Scenario: Verify Authorization Status with valid user credentials
+  Scenario: As QA, I can check valid authorization
     * def passwordTrue = validPassword
     * def usernameTrue = validUsername
 
@@ -14,7 +14,7 @@ Feature: A1. Setup Authentication and Token Generation (Reusable)
     Then status 200
     * match response == 'true'
 
-    Scenario: Verify Authorization Status with invalid user credentials
+    Scenario: As QA, I can check invalid authorizaiton
     * def passwordFalse = invalidPassword
     * def usernameFalse = invalidUsername 
 

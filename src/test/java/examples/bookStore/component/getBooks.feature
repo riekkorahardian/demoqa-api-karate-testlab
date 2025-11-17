@@ -1,10 +1,10 @@
 @getBooksComponent
-Feature: To Get All Books
+Feature: Component Test - Get Books
 
   Background:
     * url baseUrl
 
-  Scenario: To Get All Books and Verify Response Status
+  Scenario: As QA, I can query all books colection
     Given path '/BookStore/v1/Books'
     When method get
     Then status 200

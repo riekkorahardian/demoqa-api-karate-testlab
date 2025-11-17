@@ -6,7 +6,7 @@ Feature: To query specific book by ISBN
 
 
     @validGetBook
-  Scenario: To Get All Books and Verify Response Status 200
+  Scenario:  As QA, I can check book’s data with valid user profile
     * def expectedIsbn = isbnJavascriptDesignPatterns
     * print 'Expected ISBN for Learning JavaScript Design Patterns:', expectedIsbn
 
@@ -25,7 +25,7 @@ Feature: To query specific book by ISBN
 
 
     @invalidGetBook
-  Scenario: Failed To Get All Books and Verify Response Status
+  Scenario: As QA, I can check book’s data with invalid isbn
     * def invalidIsbn = dummyIsbn
 
     Given path '/BookStore/v1/Book'
